@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:android.support.design="http://schemas.android.com/tools"
+    >
+    <group android:id="@+id/g1">
+        <item
+            android:id="@+id/zhuhu_item"
+            android:checkable="true"
+            android:title="@string/zhuHu"
+            android:icon="@mipmap/zhihu"
+            android.support.design:itemTextColor="@color/nav_item"
+            app:itemIconTint="@color/nav_item"
+            />
+        <item
+            android:id="@+id/wangyi_item"
+            android:checkable="true"
+            android:title="@string/wangYiTouTiao"
+            android:icon="@mipmap/wangyi"
+            android.support.design:itemTextColor="@color/nav_item"
+            app:itemIconTint="@color/nav_item"
+            />
+        <item
+            android:id="@+id/meizi_item"
+            android:checkable="true"
+            android:title="@string/meiZi"
+            android:icon="@mipmap/meizi"
+            android.support.design:itemTextColor="@color/nav_item"
+            app:itemIconTint="@color/nav_item"
+            />
+    </group>
+</menu>

@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Look</string>
+
+    <string name="nav_text">Be kind one another</string>
+    <string name="zhuHu">知乎日报</string>
+    <string name="wangYiTouTiao">网易头条</string>
+    <string name="meiZi">每日看看</string>
+    <string name="open">打开</string>
+    <string name="about">关于</string>
+    <string name="meizi_title">干货集中营</string>
+    <string name="zhihu_title">知乎日报</string>
+    <string name="wangyi_title">网易新闻</string>
+
+    <string name="about_text">
+        天下风云出我辈，一入江湖岁月催，
+        皇图霸业谈笑中，不胜人生一场醉。
+        提剑跨骑挥鬼雨，白骨如山鸟惊飞。
+        尘事如潮人如水，只叹江湖几人回。
+        英雄路远掌声近，莫问苍生问星辰。
+        天地有涯风有信，大海无量不见人！</string>
+
+    <!--sharePreference parameters-->
+    <string name="navigation_item" translatable="false">nevigation_item</string>
 </resources>
