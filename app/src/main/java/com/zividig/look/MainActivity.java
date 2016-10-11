@@ -11,8 +11,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.FrameLayout;
+import android.view.View;
+import android.widget.LinearLayout;
 
+import com.jaeger.library.StatusBarUtil;
 import com.zividig.look.activity.AboutActivity;
 import com.zividig.look.activity.BaseActivity;
 import com.zividig.look.fragment.MeiZiFragment;
@@ -24,15 +26,16 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.zividig.look.R.id.drawer;
+import static com.zividig.look.R.id.toolbar;
 
 public class MainActivity extends BaseActivity {
 
     MenuItem currentMenuItem;
     Fragment currentFragment;
 
-    @BindView(R.id.fragment_container)
-    FrameLayout mFrameLayoutContainer;
-    @BindView(R.id.toolbar)
+    @BindView(R.id.main_container)
+    LinearLayout mContainer;
+    @BindView(toolbar)
     Toolbar mToolbar;
     @BindView(R.id.nav_view)
     NavigationView mNavView;
@@ -56,15 +59,21 @@ public class MainActivity extends BaseActivity {
 
         addFragmentsAndTitle();
 
-        if (savedInstanceState == null){
+        mDrawer.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
+
+        StatusBarUtil.setColorForDrawerLayout(this, mDrawer, getResources().getColor(R.color.colorPrimaryDark));
+
+        if (savedInstanceState == null) {
             navigationId = SharePreferenceUtil.getNavigationItem(this);
-            if (navigationId != -1){
+            if (navigationId != -1) {
                 currentMenuItem = mNavView.getMenu().findItem(navigationId);
             }
-            if (currentMenuItem == null){
+            if (currentMenuItem == null) {
                 currentMenuItem = mNavView.getMenu().findItem(R.id.zhuhu_item);
             }
-            if (currentMenuItem != null){
+            if (currentMenuItem != null) {
                 currentMenuItem.setChecked(true);
                 Fragment fragment = getFragmentById(currentMenuItem.getItemId());
                 String title = mTitleArryMap.get((Integer) currentMenuItem.getItemId());
@@ -72,16 +81,16 @@ public class MainActivity extends BaseActivity {
                     switchFragment(fragment, title);
                 }
             }
-        }else {
-            if (currentMenuItem != null){
+        } else {
+            if (currentMenuItem != null) {
                 Fragment fragment = getFragmentById(currentMenuItem.getItemId());
                 String title = mTitleArryMap.get((Integer) currentMenuItem.getItemId());
                 if (fragment != null) {
                     switchFragment(fragment, title);
                 }
-            }else {
+            } else {
                 switchFragment(new ZhiHuFragment(), " ");
-                currentMenuItem=mNavView.getMenu().findItem(R.id.zhuhu_item);
+                currentMenuItem = mNavView.getMenu().findItem(R.id.zhuhu_item);
 
             }
         }
@@ -96,12 +105,13 @@ public class MainActivity extends BaseActivity {
                     SharePreferenceUtil.putNavigationItem(MainActivity.this, id);
                     currentMenuItem = item;
                     currentMenuItem.setChecked(true);
-                    switchFragment(getFragmentById(currentMenuItem.getItemId()),mTitleArryMap.get(currentMenuItem.getItemId()));
+                    switchFragment(getFragmentById(currentMenuItem.getItemId()), mTitleArryMap.get(currentMenuItem.getItemId()));
                 }
                 mDrawer.closeDrawer(GravityCompat.START, true);
                 return true;
             }
         });
+
     }
 
     private Fragment getFragmentById(int id) {
@@ -130,7 +140,7 @@ public class MainActivity extends BaseActivity {
 
     private void switchFragment(Fragment fragment,String title){
         if (currentFragment == null || !currentFragment.getClass().getName().equals(fragment.getClass().getName()))
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, fragment)
+            getSupportFragmentManager().beginTransaction().replace(R.id.main_container, fragment)
                     .commit();
         currentFragment = fragment;
     }

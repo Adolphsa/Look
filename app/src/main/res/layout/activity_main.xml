@@ -6,34 +6,26 @@
     android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:clipToPadding="false"
     android:fitsSystemWindows="true"
     tools:context="com.zividig.look.MainActivity">
 
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <View
-            android:id="@+id/status_bar_background"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:background="@color/status_bar_back"
-            />
-        <FrameLayout
-            android:id="@+id/fragment_container"
+        <LinearLayout
+            android:id="@+id/main_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            />
+            android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?android:actionBarSize"
-            android:outlineProvider="none"
-            android:background="#bc000000"
-            android:elevation="1dp"
-            app:title="@string/app_name"
-            />
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/colorPrimary"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+        </LinearLayout>
 
     </FrameLayout>
 
