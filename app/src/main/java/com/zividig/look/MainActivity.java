@@ -175,4 +175,9 @@ public class MainActivity extends BaseActivity {
         Intent intent=new Intent(this, AboutActivity.class);
         this.startActivity(intent);
     }
+
+    public interface loadingMore{
+        void loadingStart();
+        void loadingFinish();
+    }
 }
