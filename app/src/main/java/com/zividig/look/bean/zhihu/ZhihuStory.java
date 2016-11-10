@@ -16,7 +16,7 @@ public class ZhihuStory {
     private String title;       //新闻标题
 
     @SerializedName("image")
-    private String imade;       //新闻图片
+    private String image;       //新闻图片
 
     @SerializedName("share_url")
     private String mShareUrl;   //供在线查看内容与分享至 SNS 用的 URL
@@ -40,12 +40,12 @@ public class ZhihuStory {
         this.title = title;
     }
 
-    public String getImade() {
-        return imade;
+    public String getImage() {
+        return image;
     }
 
-    public void setImade(String imade) {
-        this.imade = imade;
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public String getShareUrl() {

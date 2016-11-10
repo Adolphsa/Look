@@ -20,6 +20,7 @@ android {
     }
 }
 
+apply plugin: 'com.neenbedankt.android-apt'
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -47,4 +48,8 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:x.y.z'
 
+    //glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    compile 'com.android.support:palette-v7:24.1.1'
 }

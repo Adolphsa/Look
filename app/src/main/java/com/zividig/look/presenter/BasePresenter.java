@@ -7,5 +7,5 @@ package com.zividig.look.presenter;
 
 public interface BasePresenter {
 
-    void unsubscribe();     //取消订阅
+    void unsubcrible();     //取消订阅
 }

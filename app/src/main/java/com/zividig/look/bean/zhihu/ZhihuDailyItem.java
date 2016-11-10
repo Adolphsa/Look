@@ -16,7 +16,7 @@ public class ZhihuDailyItem {
     private int type;           //类型
 
     @SerializedName("id")
-    private int id;             //内容的id
+    private String id;             //内容的id
 
     @SerializedName("title")
     private String title;       //标题
@@ -40,11 +40,11 @@ public class ZhihuDailyItem {
         this.type = type;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

@@ -33,6 +33,17 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".MainActivity"/>
         </activity>
+
+        <activity android:name=".activity.ZhihuDescribeActivity"
+                  android:launchMode="singleTop"
+                  android:parentActivityName=".MainActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/Look.Translucent.Look.Image">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+
+        </activity>
     </application>
 
 </manifest>

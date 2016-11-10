@@ -11,10 +11,18 @@
     <color name="primary_super_dark">#11261c</color> <!-- same hue & sat, 15% brightness -->
 
     <!--common color-->
+    <color name="content_placeholder">#ffe0e0e0</color>
     <color name="background_light">#fafafa</color> <!-- grey 50 -->
     <color name="background_super_dark">#ff292929</color>
     <color name="scrim">#99323232</color>
     <color name="text_primary_light">#ffffffff</color>
+    <color name="ripple_dark">@color/mid_grey</color>
+    <color name="mid_grey">#40808080</color>
+    <color name="dark_icon">#99000000</color> <!-- 60% black-->
+    <color name="dark_icon_half_alpha">#4d000000</color> <!-- 30% black-->
+    <color name="divider">#1f000000</color> <!-- 12% black -->
+    <color name="text_color">#f6000000</color>
+    <color name="text_source">#732b2828</color>
 
     <!-- text (most text uses material theme colours) -->
     <color name="hint_disabled_dark">#43000000</color> <!-- 26% black -->
@@ -22,4 +30,15 @@
 
     <color name="status_bar_back">#ff676767</color> <!-- this is blended with immersive_bars to produce the desired status bar color i.e. background_super_dark -->
     <color name="nav_item">#ffffffff</color>
+
+    <color name="gif_badge_light_image">#40000000</color>
+    <color name="gif_badge_dark_image">#b3ffffff</color>
+
+    <color name="nev_item">#ffffffff</color>
+
+    <!-- dribbble -->
+    <color name="dribbble">#fff06292</color> <!-- pink 300 -->
+    <color name="dribbble_dark">#ec407a</color> <!-- pink 400 -->
+    <color name="dribbble_super_dark">#ff33292d</color>
+    <color name="dribbble_link_highlight">#b3f06292</color>
 </resources>
